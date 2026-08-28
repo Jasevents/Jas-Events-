@@ -28,36 +28,42 @@
         }
         
         .card {
-            max-width: 700px;
+            max-width: 680px;
             width: 100%;
-            background: #111;
-            border-radius: 40px;
-            padding: 40px 30px 30px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 0 1.5px #b8942a, 0 0 40px rgba(184,148,42,0.06);
+            background: #0d0d0d;
+            border-radius: 36px;
+            padding: 38px 28px 28px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.95), 0 0 0 1.5px #b8942a, 0 0 60px rgba(184,148,42,0.04);
             text-align: center;
-            border: 1px solid #b8942a;
+            border: 1px solid rgba(184,148,42,0.3);
             position: relative;
+            transition: transform 0.3s ease;
         }
         
-        /* حدود ذهبية خفيفة */
+        .card:hover {
+            transform: scale(1.003);
+        }
+        
+        /* حدود ذهبية أنيقة */
         .card::before {
             content: '';
             position: absolute;
-            inset: -1.5px;
-            border-radius: 42px;
-            padding: 1.5px;
-            background: linear-gradient(135deg, #b8942a, transparent 40%, transparent 60%, #b8942a);
+            inset: -2px;
+            border-radius: 38px;
+            padding: 2px;
+            background: linear-gradient(135deg, #b8942a, transparent 30%, transparent 70%, #b8942a);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
+            opacity: 0.7;
         }
         
-        /* الشعار على شكل الصورة */
+        /* الشعار - مطابق للصورة بالضبط */
         .logo-main {
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 800;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             color: #b8942a;
             line-height: 1.1;
         }
@@ -65,43 +71,44 @@
         .logo-main .dot {
             color: #b8942a;
             font-weight: 300;
+            margin: 0 2px;
         }
         
         .logo-main .events {
             display: block;
-            font-size: 32px;
-            letter-spacing: 8px;
+            font-size: 34px;
+            letter-spacing: 9px;
             color: #d4c5a0;
             font-weight: 300;
             margin-top: 2px;
         }
         
         .tagline {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 300;
             letter-spacing: 5px;
             color: #b8942a;
             margin: 14px 0 6px;
             text-transform: uppercase;
-            border-top: 1px solid rgba(184,148,42,0.2);
-            border-bottom: 1px solid rgba(184,148,42,0.2);
+            border-top: 1px solid rgba(184,148,42,0.15);
+            border-bottom: 1px solid rgba(184,148,42,0.15);
             padding: 10px 0;
             display: inline-block;
         }
         
         .location {
-            font-size: 16px;
+            font-size: 15px;
             color: #b8942a;
-            margin: 8px 0 24px;
+            margin: 8px 0 22px;
             letter-spacing: 1px;
-            background: rgba(184,148,42,0.05);
+            background: rgba(184,148,42,0.04);
             padding: 5px 22px;
             border-radius: 40px;
             display: inline-block;
-            border: 1px solid rgba(184,148,42,0.1);
+            border: 1px solid rgba(184,148,42,0.08);
         }
         
-        /* الأزرار - تصميم أنيق وبسيط */
+        /* الأزرار - تصميم نظيف */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -120,45 +127,64 @@
             font-weight: 500;
             text-decoration: none;
             color: #e8e0d0;
-            background: #181818;
+            background: #141414;
             border: 1px solid #2a2a2a;
             transition: all 0.3s ease;
             box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.02), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .btn:hover::before {
+            opacity: 1;
         }
         
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-            background: #222;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+            background: #1a1a1a;
+        }
+        
+        .btn:active {
+            transform: scale(0.97);
         }
         
         .btn i { font-size: 20px; width: 26px; text-align: center; }
         
-        /* ألوان الأزرار (هادية) */
+        /* ألوان الأزرار (هادية وأنيقة) */
         .btn-whatsapp { border-color: #25d366; color: #25d366; }
-        .btn-whatsapp:hover { background: #25d366; color: #fff; }
+        .btn-whatsapp:hover { background: #25d366; color: #0a0a0a; border-color: #25d366; }
         
         .btn-instagram { border-color: #d6249f; color: #d6249f; }
-        .btn-instagram:hover { background: #d6249f; color: #fff; }
+        .btn-instagram:hover { background: #d6249f; color: #0a0a0a; border-color: #d6249f; }
         
         .btn-facebook { border-color: #1877f2; color: #1877f2; }
-        .btn-facebook:hover { background: #1877f2; color: #fff; }
+        .btn-facebook:hover { background: #1877f2; color: #0a0a0a; border-color: #1877f2; }
         
         .btn-email { border-color: #ea4335; color: #ea4335; }
-        .btn-email:hover { background: #ea4335; color: #fff; }
+        .btn-email:hover { background: #ea4335; color: #0a0a0a; border-color: #ea4335; }
         
         .btn-call { border-color: #34a853; color: #34a853; }
-        .btn-call:hover { background: #34a853; color: #fff; }
+        .btn-call:hover { background: #34a853; color: #0a0a0a; border-color: #34a853; }
         
         .btn-location { border-color: #b8942a; color: #b8942a; }
-        .btn-location:hover { background: #b8942a; color: #0a0a0a; }
+        .btn-location:hover { background: #b8942a; color: #0a0a0a; border-color: #b8942a; }
         
         /* QR Code */
         .qr-section {
-            margin: 24px 0 12px;
+            margin: 22px 0 12px;
             padding: 16px;
-            border-top: 1px solid rgba(184,148,42,0.1);
-            border-bottom: 1px solid rgba(184,148,42,0.1);
+            border-top: 1px solid rgba(184,148,42,0.08);
+            border-bottom: 1px solid rgba(184,148,42,0.08);
         }
         
         .qr-section img {
@@ -168,6 +194,11 @@
             border: 2px solid #b8942a;
             padding: 5px;
             background: #fff;
+            transition: transform 0.3s ease;
+        }
+        
+        .qr-section img:hover {
+            transform: scale(1.05);
         }
         
         .qr-label {
@@ -180,21 +211,22 @@
         .qr-label strong { color: #b8942a; }
         
         .footer {
-            margin-top: 22px;
+            margin-top: 20px;
             font-size: 14px;
             color: #666;
             letter-spacing: 1px;
-            padding-top: 16px;
+            padding-top: 14px;
         }
         
         .footer strong { color: #b8942a; font-weight: 400; }
-        .footer small { display: block; font-size: 11px; color: #444; margin-top: 4px; }
+        .footer small { display: block; font-size: 11px; color: #444; margin-top: 3px; }
         
+        /* تنسيق الجوال */
         @media (max-width: 500px) {
-            .card { padding: 28px 16px 20px; }
-            .logo-main { font-size: 32px; letter-spacing: 4px; }
-            .logo-main .events { font-size: 24px; letter-spacing: 5px; }
-            .tagline { font-size: 15px; letter-spacing: 3px; padding: 8px 0; }
+            .card { padding: 24px 14px 18px; }
+            .logo-main { font-size: 32px; letter-spacing: 3px; }
+            .logo-main .events { font-size: 24px; letter-spacing: 6px; }
+            .tagline { font-size: 14px; letter-spacing: 3px; padding: 8px 0; }
             .grid { grid-template-columns: 1fr; gap: 10px; }
             .btn { padding: 13px 10px; font-size: 15px; }
             .qr-section img { width: 100px; height: 100px; }
@@ -203,7 +235,7 @@
 </head>
 <body>
     <div class="card">
-        <!-- الشعار - مطابق للصورة -->
+        <!-- الشعار - مطابق للصورة بالضبط -->
         <div class="logo-main">
             <span class="dot">•</span> J <span class="dot">•</span> A <span class="dot">•</span> S <span class="dot">•</span>
             <span class="events">EVENTS</span>
