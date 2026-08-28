@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J.A.S EVENTS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #f5f5f5;
+        }
+        .card {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px;
+            padding: 40px 30px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.15);
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.01);
+        }
+        .logo {
+            font-size: 64px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            background: linear-gradient(135deg, #f9d423, #ff4e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            line-height: 1.2;
+        }
+        .logo span {
+            font-size: 28px;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #f5f5f5, #d4d4d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .tagline {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #f5f5f5;
+            margin: 16px 0 8px;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 12px 0;
+            display: inline-block;
+        }
+        .location {
+            font-size: 18px;
+            color: #ffd966;
+            margin-top: 6px;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+            background: rgba(255, 215, 0, 0.08);
+            padding: 8px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        .heading {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        .heading small {
+            display: block;
+            font-size: 15px;
+            font-weight: 300;
+            color: #bbb;
+            margin-top: 6px;
+            letter-spacing: 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0 10px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 10px;
+            border-radius: 60px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.5px;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        .btn i {
+            font-size: 22px;
+            width: 28px;
+            text-align: center;
+        }
+        .btn-whatsapp {
+            background: #25d366;
+            border-color: #25d366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #1ebe5c;
+            border-color: #1ebe5c;
+        }
+        .btn-instagram {
+            background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285aeb);
+            border-color: transparent;
+            color: #fff;
+        }
+        .btn-instagram:hover {
+            opacity: 0.9;
+            transform: translateY(-4px) scale(1.02);
+        }
+        .btn-facebook {
+            background: #1877f2;
+            border-color: #1877f2;
+            color: #fff;
+        }
+        .btn-facebook:hover {
+            background: #1464d4;
+            border-color: #1464d4;
+        }
+        .btn-email {
+            background: #ea4335;
+            border-color: #ea4335;
+            color: #fff;
+        }
+        .btn-email:hover {
+            background: #d33426;
+            border-color: #d33426;
+        }
+        .btn-call {
+            background: #34a853;
+            border-color: #34a853;
+            color: #fff;
+        }
+        .btn-call:hover {
+            background: #2d9248;
+            border-color: #2d9248;
+        }
+        .btn-location {
+            background: #fbbc04;
+            border-color: #fbbc04;
+            color: #1a1a1a;
+        }
+        .btn-location:hover {
+            background: #e5ac04;
+            border-color: #e5ac04;
+        }
+        .btn-full {
+            grid-column: 1 / -1;
+        }
+        .footer {
+            margin-top: 36px;
+            font-size: 14px;
+            color: #888;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 24px;
+        }
+        .footer strong {
+            color: #ffd966;
+            font-weight: 500;
+        }
+        /* Responsive */
+        @media (max-width: 500px) {
+            .card {
+                padding: 30px 18px;
+            }
+            .logo {
+                font-size: 44px;
+                letter-spacing: 4px;
+            }
+            .logo span {
+                font-size: 20px;
+            }
+            .tagline {
+                font-size: 17px;
+                letter-spacing: 2px;
+                padding: 10px 0;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .btn {
+                padding: 14px 12px;
+                font-size: 15px;
+                justify-content: center;
+            }
+            .heading {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Logo -->
+        <div class="logo">
+            J.A.S <span>EVENTS</span>
+        </div>
+        <div class="tagline">WE PLAN, YOU ENJOY</div>
+        <div class="location">📍 Hurghada, Red Sea</div>
+
+        <!-- العنوان -->
+        <div class="heading">
+            تواصل معنا
+            <small>اختر الوسيلة المفضلة للتواصل معنا</small>
+        </div>
+
+        <!-- شبكة الأزرار -->
+        <div class="grid">
+            <!-- واتساب -->
+            <a href="https://wa.me/201114974162" target="_blank" class="btn btn-whatsapp">
+                <i>📱</i> WhatsApp
+            </a>
+            <!-- إنستجرام -->
+            <a href="https://www.instagram.com/jasevents.0" target="_blank" class="btn btn-instagram">
+                <i>📸</i> Instagram
+            </a>
+            <!-- فيسبوك -->
+            <a href="https://www.facebook.com/share/1JnBz7pn9o/" target="_blank" class="btn btn-facebook">
+                <i>👍</i> Facebook
+            </a>
+            <!-- إيميل -->
+            <a href="mailto:jasevents2026@gmail.com" class="btn btn-email">
+                <i>✉</i> Email
+            </a>
+            <!-- اتصال -->
+            <a href="tel:+201114974162" class="btn btn-call">
+                <i>📞</i> Call Now
+            </a>
+            <!-- موقع -->
+            <a href="https://maps.google.com/?q=Hurghada+Red+Sea" target="_blank" class="btn btn-location">
+                <i>📍</i> Location
+            </a>
+        </div>
+
+        <!-- تذييل -->
+        <div class="footer">
+            <strong>Serving Moments, Creating Memories</strong><br>
+            <span style="font-size:12px; color:#666;">J.A.S EVENTS © 2026</span>
+        </div>
+    </div>
+</body>
+</html>
