@@ -108,7 +108,7 @@
             border: 1px solid rgba(184,148,42,0.08);
         }
         
-        /* الأزرار - تصميم نظيف */
+        /* الأزرار - تصميم مربع مثل الصورة */
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -122,7 +122,7 @@
             justify-content: center;
             gap: 10px;
             padding: 15px 10px;
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 16px;
             font-weight: 500;
             text-decoration: none;
@@ -179,43 +179,13 @@
         .btn-location { border-color: #b8942a; color: #b8942a; }
         .btn-location:hover { background: #b8942a; color: #0a0a0a; border-color: #b8942a; }
         
-        /* QR Code */
-        .qr-section {
-            margin: 22px 0 12px;
-            padding: 16px;
-            border-top: 1px solid rgba(184,148,42,0.08);
-            border-bottom: 1px solid rgba(184,148,42,0.08);
-        }
-        
-        .qr-section img {
-            width: 120px;
-            height: 120px;
-            border-radius: 14px;
-            border: 2px solid #b8942a;
-            padding: 5px;
-            background: #fff;
-            transition: transform 0.3s ease;
-        }
-        
-        .qr-section img:hover {
-            transform: scale(1.05);
-        }
-        
-        .qr-label {
-            color: #888;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            margin-top: 6px;
-        }
-        
-        .qr-label strong { color: #b8942a; }
-        
         .footer {
             margin-top: 20px;
             font-size: 14px;
             color: #666;
             letter-spacing: 1px;
             padding-top: 14px;
+            border-top: 1px solid rgba(184,148,42,0.08);
         }
         
         .footer strong { color: #b8942a; font-weight: 400; }
@@ -229,7 +199,6 @@
             .tagline { font-size: 14px; letter-spacing: 3px; padding: 8px 0; }
             .grid { grid-template-columns: 1fr; gap: 10px; }
             .btn { padding: 13px 10px; font-size: 15px; }
-            .qr-section img { width: 100px; height: 100px; }
         }
     </style>
 </head>
@@ -252,12 +221,6 @@
             <a href="mailto:jasevents2026@gmail.com" class="btn btn-email"><i>✉</i> Email</a>
             <a href="tel:+201114974162" class="btn btn-call"><i>📞</i> Call Now</a>
             <a href="https://maps.google.com/?q=Hurghada+Red+Sea" target="_blank" rel="noopener noreferrer" class="btn btn-location"><i>📍</i> Location</a>
-        </div>
-        
-        <!-- QR Code -->
-        <div class="qr-section">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://jasevents.github.io/Jas-Events/" alt="QR Code" />
-            <div class="qr-label"><strong>📲 J.A.S EVENTS</strong> — امسح و تواصل</div>
         </div>
         
         <div class="footer">
